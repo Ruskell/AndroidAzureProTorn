@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:hint="Select a league"
+      style="@style/strongText" />
+    <Spinner
+        android:id="@+id/spnLeague"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/leaguePrompt" 
+        android:paddingBottom="10dp"/>
+  <TextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:hint="Current Standings"
+      style="@style/strongText" />
+  <TableLayout
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/tabLayLeague">
+    <TableRow
+        android:id="@+id/lgHeader1">
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:padding="2dp"
+          android:text="Team Name" />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:padding="2dp"
+          android:text="Played" />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:padding="2dp"
+          android:text="W" />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:padding="2dp"
+          android:text="L" />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:padding="2dp"
+          android:text="T" />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:padding="2dp"
+          android:text="GF" />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:padding="2dp"
+          android:text="GA" />
+    </TableRow>
+  </TableLayout>
+</LinearLayout>

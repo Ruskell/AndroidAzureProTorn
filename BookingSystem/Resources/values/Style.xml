@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="customTheme" parent="android:Theme.Material.Light">
+    <item name="android:windowBackground">@color/bgColor</item>
+    <item name="android:colorBackground">#f7fcff</item>
+  </style>
+  <style name="customThemeNoBar" parent="android:Theme.Material.Light.NoActionBar">
+    <item name="android:windowBackground">@color/bgColor</item>
+    <item name="android:colorBackground">#f7fcff</item>
+  </style>
+  <style name="strongText" >
+    <item name="android:textColor">#333333</item>
+    <item name="android:typeface">monospace</item>
+  </style>
+  <style name="header" >
+    <item name="android:textSize">40sp</item>
+    <item name="android:textColor">#333333</item>
+    <item name="android:typeface">monospace</item>
+  </style>
+  <style name="datePickerStyle" parent="@android:style/Widget.Material.DatePicker">
+    <item name="android:datePickerMode">spinner</item>
+    <item name="android:calendarViewShown">false</item>
+  </style>
+</resources>

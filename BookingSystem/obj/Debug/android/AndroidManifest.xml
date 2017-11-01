@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="BookingSystem.BookingSystem" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="16" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application android:label="ProTorn" android:icon="@drawable/ic_logo" android:theme="@style/customTheme" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
+    <activity android:icon="@drawable/ic_logo" android:label="ProTorn" android:name="md5f04c85da8c54e107840151448a17b4e2.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="Main Menu" android:name="md5f04c85da8c54e107840151448a17b4e2.mainMenu" />
+    <activity android:label="Leagues" android:name="md5f81c7632fb04c6825f00b0d4bfb03784.leagueView" />
+    <activity android:label="Register" android:name="md5f81c7632fb04c6825f00b0d4bfb03784.regView" />
+    <activity android:label="Personal Schedule" android:name="md5f81c7632fb04c6825f00b0d4bfb03784.scheduleView" />
+    <activity android:label="Create New Team" android:name="md5f81c7632fb04c6825f00b0d4bfb03784.teamCreate" />
+    <activity android:label="Manage a Team" android:name="md5f81c7632fb04c6825f00b0d4bfb03784.teamManager" />
+    <activity android:label="Team Viewer" android:name="md5f81c7632fb04c6825f00b0d4bfb03784.teamView" />
+    <activity android:label="Web Authenticator" android:name="md581ea35436e69ff6296ba639950f061de.FormAuthenticatorActivity" />
+    <activity android:label="Web Authenticator" android:name="md581ea35436e69ff6296ba639950f061de.WebAuthenticatorActivity" />
+    <receiver android:name="md581ea35436e69ff6296ba639950f061de.CustomTabsActionsBroadcastReceiver" />
+    <activity android:label="@string/title_activity_webview" android:theme="@android:style/Theme.DeviceDefault" android:name="md581ea35436e69ff6296ba639950f061de.WebViewActivity" />
+    <activity android:label="Web Authenticator Native Broswer" android:launchMode="singleTop" android:name="md581ea35436e69ff6296ba639950f061de.WebAuthenticatorNativeBrowserActivity" />
+    <activity android:name="com.microsoft.windowsazure.mobileservices.authentication.RedirectUrlActivity" />
+    <service android:name="md59f70a99687498e7ba187118950981d26.KeepAliveService" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="BookingSystem.BookingSystem.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.BookingSystem.BookingSystem" />
+      </intent-filter>
+    </receiver>
+  </application>
+</manifest>
