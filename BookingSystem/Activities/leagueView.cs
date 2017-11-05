@@ -53,6 +53,7 @@ namespace BookingSystem.Activities
             };
         }
 
+
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu, menu);
@@ -124,24 +125,37 @@ namespace BookingSystem.Activities
                 TextView GA = new TextView(this);
 
                 tmName.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
+                tmName.Gravity = GravityFlags.Center;
                 tmName.Text = teamList[i].teamName;
                 tmName.SetPadding(2, 2, 2, 2);
+
                 GP.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
+                GP.Gravity = GravityFlags.Center;
                 GP.Text = teamList[i].gamesPlayed.ToString();
                 GP.SetPadding(2, 2, 2, 2);
+
                 wins.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
+                wins.Gravity = GravityFlags.Center;
                 wins.Text = teamList[i].wins.ToString();
                 wins.SetPadding(2, 2, 2, 2);
+
                 losses.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
+                losses.Gravity = GravityFlags.Center;
                 losses.Text = teamList[i].losses.ToString();
                 losses.SetPadding(2, 2, 2, 2);
+
                 ties.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
+                ties.Gravity = GravityFlags.Center;
                 ties.Text = teamList[i].ties.ToString();
                 ties.SetPadding(2, 2, 2, 2);
+
                 GF.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
+                GF.Gravity = GravityFlags.Center;
                 GF.Text = teamList[i].goalsFor.ToString();
                 GF.SetPadding(2, 2, 2, 2);
+
                 GA.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
+                GA.Gravity = GravityFlags.Center;
                 GA.Text = teamList[i].goalsAgainst.ToString();
                 GA.SetPadding(2, 2, 2, 2);
 
@@ -162,6 +176,6 @@ namespace BookingSystem.Activities
 
             prog.Dismiss();
         }
-
+        
     }
 }

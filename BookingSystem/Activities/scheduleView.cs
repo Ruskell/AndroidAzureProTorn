@@ -19,11 +19,13 @@ namespace BookingSystem.Activities
     public class scheduleView : Activity
     {
         static MobileServiceClient MobileService;
-        static IMobileServiceTable<PlayerTeams> teamTable;
+        static IMobileServiceTable<PlayerTeams> playerTeamTable;
         static IMobileServiceTable<Matches> matchTable;
+        static IMobileServiceTable<Teams> teamTable;
 
-        List<PlayerTeams> teamList;
+        List<PlayerTeams> playerTeamList;
         List<Matches> matchList;
+        List<Teams> teamList;
 
         ProgressDialog prog;
         AlertDialog.Builder alert;
@@ -46,37 +48,52 @@ namespace BookingSystem.Activities
 
             scTable = FindViewById<TableLayout>(Resource.Id.tabLaySched);
 
+            playerTeamTable = MobileService.GetTable<PlayerTeams>();
+            matchTable = MobileService.GetTable<Matches>();
+            teamTable = MobileService.GetTable<Teams>();
+
             populateSchedule();
 
         }
 
-        private async Task populateSchedule()
+        public async Task populateTeamList()
         {
-            teamList = await teamTable.Where(tm => tm.playerID == MainActivity.user.id).ToListAsync();
-            if (teamList.Count == 0)
+        }
+
+        public async Task populateSchedule()
+        {
+            matchList = new List<Matches>();
+            playerTeamList = await playerTeamTable.Where(tm => tm.playerID == MainActivity.user.id).ToListAsync();
+            if (playerTeamList.Count == 0)
             {
                 prog.Dismiss();
                 return;
             }
-
+            
             try
             {
-                foreach (PlayerTeams team in teamList)
+                foreach (PlayerTeams team in playerTeamList)
                 {
                     List<Matches> tempList = await matchTable.Where(match => match.teamID1 == team.teamID || match.teamID2 == team.teamID).ToListAsync();
-                    for (int i = 0; i != tempList.Count; i++)
+                    foreach (Matches match in tempList)
                     {
-                        matchList.Add(tempList[i]);
+                        matchList.Add(match);
                     }
                 }
             }
             catch (Exception e)
             {
+                prog.Dismiss();
                 alert.SetTitle("Something went wrong!");
                 alert.SetMessage("Error: " + e);
                 alert.Show();
+
                 return;
             }
+
+            Console.WriteLine("testpoint");
+            teamList = await teamTable.ToListAsync();
+            //await populateTeamList();
 
             foreach (Matches match in matchList)
             {
@@ -93,17 +110,17 @@ namespace BookingSystem.Activities
                 date.SetPadding(4, 2, 2, 2);
                 date.Text = match.matchDate;
 
-                home.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
+                home.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 2);
                 home.SetPadding(4, 2, 2, 2);
-                home.Text = match.teamID1;
+                home.Text = getTeamName(match.teamID1);
 
                 score.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
                 score.SetPadding(4, 2, 2, 2);
                 score.Text = match.team1Score + " v " + match.team2Score;
 
-                away.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
+                away.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 2);
                 away.SetPadding(4, 2, 2, 2);
-                away.Text = match.teamID2;
+                away.Text = getTeamName(match.teamID2);
 
                 time.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
                 time.SetPadding(4, 2, 2, 2);
@@ -123,10 +140,27 @@ namespace BookingSystem.Activities
                 scTable.AddView(tr);
             }
             prog.Dismiss();
+        }
 
+        string getTeamName(string ID)
+        {
+            try
+            {
+                foreach (Teams team in teamList)
+                {
+                    if (team.id == ID) return team.teamName;
+                }
 
-
-            return;
+            }
+            catch (Exception e)
+            {
+                prog.Dismiss();
+                alert.SetTitle("Something went wrong!");
+                alert.SetMessage("Error: " + e);
+                alert.Show();
+                return "ERROR team";
+            }
+            return "NULL team";
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

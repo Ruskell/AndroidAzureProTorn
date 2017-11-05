@@ -34,7 +34,8 @@
         android:padding="2dp"
         android:paddingTop="5dp"
         android:text="Team Score"
-        style="@style/strongText" />
+        style="@style/strongText"
+        android:layout_marginTop="15dp" />
     <TableLayout
         android:minWidth="25px"
         android:minHeight="25px"
@@ -51,61 +52,61 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="left"
+                android:gravity="center"
                 android:padding="2dp"
                 android:text="Played" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="left"
+                android:gravity="center"
                 android:padding="2dp"
                 android:text="W" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="left"
+                android:gravity="center"
                 android:padding="2dp"
                 android:text="L" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="left"
+                android:gravity="center"
                 android:padding="2dp"
                 android:text="T" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="left"
+                android:gravity="center"
                 android:padding="2dp"
                 android:text="GF" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="left"
+                android:gravity="center"
                 android:padding="2dp"
                 android:text="GA" />
         </TableRow>
-      <TableRow
-          android:id="@+id/lgRow1"
-          android:minWidth="25px"
-          android:minHeight="25px"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content">
-      </TableRow>
+        <TableRow
+            android:id="@+id/lgRow1"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TableRow>
     </TableLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="2dp"
-        android:paddingTop="5dp"
         android:text="Schedule"
-        style="@style/strongText" />
+        style="@style/strongText"
+        android:layout_marginTop="15dp" />
     <TableLayout
         android:id="@+id/tabLaySched"
         android:minWidth="25px"
@@ -115,10 +116,11 @@
         android:layout_height="wrap_content">
         <TableRow
             android:id="@+id/schedHeader1"
-            android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:weightSum="8"
+            android:minWidth="100px">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

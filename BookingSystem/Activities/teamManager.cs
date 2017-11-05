@@ -12,6 +12,7 @@ using Android.Widget;
 using BookingSystem.Classes;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Threading.Tasks;
+using Android.Graphics;
 
 namespace BookingSystem.Activities
 {
@@ -164,9 +165,13 @@ namespace BookingSystem.Activities
                 dec.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent);
 
                 acc.Click += Acc_Click;
+                acc.Text = "Accept";
+                acc.SetTextColor(Color.SeaGreen);
                 acceptList.Add(acc);
 
                 dec.Click += Dec_Click;
+                dec.Text = "Decline";
+                dec.SetTextColor(Color.DarkRed);
                 declineList.Add(dec);
 
                 tr.AddView(name);
