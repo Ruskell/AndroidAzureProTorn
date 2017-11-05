@@ -14,6 +14,7 @@
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_marginTop="15dp"
         android:hint="Enter a team name:" />
     <EditText
         android:id="@+id/teamName"
@@ -25,6 +26,7 @@
         android:id="@+id/btnCreateTeam"
         android:text="Create Team"
         android:textSize="22sp"
+        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent" />
 </LinearLayout>

@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:hint="Team Requests"
+        android:layout_marginTop="15dp"
         style="@style/strongText" />
     <TableLayout
         android:id="@+id/tabLayRequests"

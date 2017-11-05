@@ -157,8 +157,7 @@ namespace BookingSystem.Activities
 
             //Get a list of teams in the league where the team's leagueID is equal to the selected leagueID
             if (teamList[tmSpinner.SelectedItemPosition] != null) teamGridList = await teamsTable.Where(tm => tm.id == teamList[tmSpinner.SelectedItemPosition].id).ToListAsync();
-
-            prog.SetMessage(teamGridList.Count + "");
+            
 
             if (teamGridList.Count > 0)
             {
@@ -206,7 +205,6 @@ namespace BookingSystem.Activities
                 tmTable.AddView(row);
             }
 
-            prog.Dismiss();
         }
 
         public async Task populateSchedGrid()

@@ -35,7 +35,8 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="130dp"
@@ -49,7 +50,8 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="130dp"
@@ -64,7 +66,8 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="130dp"
@@ -79,13 +82,14 @@
                 android:layout_height="wrap_content"
                 android:layout_width="fill_parent"
                 android:text="\nDate of Birth"
+                android:layout_marginTop="10dp"
                 style="@style/strongText" />
             <DatePicker
                 android:id="@+id/datePicker"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                style="@style/datePickerStyle"/>
+                style="@style/datePickerStyle" />
             <Button
                 android:id="@+id/btnCont"
                 android:text="Continue"

@@ -112,10 +112,12 @@ namespace BookingSystem.Activities
 
                 home.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 2);
                 home.SetPadding(4, 2, 2, 2);
+                home.Gravity = GravityFlags.Right;
                 home.Text = getTeamName(match.teamID1);
 
                 score.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 1);
                 score.SetPadding(4, 2, 2, 2);
+                score.Gravity = GravityFlags.Center;
                 score.Text = match.team1Score + " v " + match.team2Score;
 
                 away.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent, 2);

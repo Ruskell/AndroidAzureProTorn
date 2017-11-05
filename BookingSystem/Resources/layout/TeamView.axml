@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Select a Team"
+        android:layout_marginTop="15dp"
         android:paddingTop="5dp"
         style="@style/strongText" />
     <Spinner
